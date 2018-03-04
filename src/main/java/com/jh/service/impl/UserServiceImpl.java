@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author 辉
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -24,5 +27,12 @@ public class UserServiceImpl implements UserService {
         }
         return userMapper.selectByExample(example);
 
+    }
+
+    @Override
+    public List<User> getTimeList() {
+        UserExample example = new UserExample();
+        UserExample.Criteria criteria = example.createCriteria();
+        return userMapper.getTimeList(example);
     }
 }

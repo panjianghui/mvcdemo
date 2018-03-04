@@ -208,4 +208,7 @@
       address = #{address,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getTimeList" parameterType="com.jh.entity.UserExample" resultType="java.lang.Long">
+    select * from user
+  </select>
 </mapper>

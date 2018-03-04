@@ -5,6 +5,9 @@ import com.jh.entity.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * @author 辉
+ */
 public interface UserMapper {
     long countByExample(UserExample example);
 
@@ -17,7 +20,7 @@ public interface UserMapper {
     int insertSelective(User record);
 
     List<User> selectByExample(UserExample example);
-
+    List<User> getTimeList(UserExample example);
     User selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
