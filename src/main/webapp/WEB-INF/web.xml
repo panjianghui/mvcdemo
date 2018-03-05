@@ -9,7 +9,7 @@
 
   <!--welcome pages-->
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   <!--当系统出现404错误，跳转到页面NoPage.html-->
   <error-page>
@@ -65,6 +65,7 @@
   <!--如果你的DispatcherServlet拦截"/"，为了实现REST风格，拦截了所有的请求，那么同时对*.js,*.jpg等静态文件的访问也就被拦截了。-->
   <!--方案一：激活Tomcat的defaultServlet来处理静态文件-->
   <!--要写在DispatcherServlet的前面，让defaultServlet先拦截请求，这样请求就不会进入Spring了-->
+
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.css</url-pattern>
@@ -89,7 +90,7 @@
     <servlet-name>default</servlet-name>
     <url-pattern>*.js</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
+   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
