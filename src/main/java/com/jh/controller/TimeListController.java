@@ -32,4 +32,5 @@ public class TimeListController extends GenericController{
 
             return timeList;
         }
+
 }
