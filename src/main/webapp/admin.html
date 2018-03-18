@@ -48,9 +48,9 @@
         <li class="layui-nav-item layui-nav-itemed">
           <a class="" href="javascript:;">所有商品</a>
           <dl class="layui-nav-child" >
-            <dd id="nav-dl-1" onclick="onclick1()"><a href="javascript:;">列表一</a></dd>
-            <dd><a id="nav-dl-2" onclick="onclick2()" href="javascript:;">列表二</a></dd>
-            <dd><a href="javascript:;">列表三</a></dd>
+            <dd id="nav-dl-1" onclick="onclick1()"><a href="javascript:;">时间廊</a></dd>
+            <dd><a id="nav-dl-2" onclick="onclick2()" href="javascript:;">用户管理</a></dd>
+            <dd><a href="javascript:;">内容管理</a></dd>
             <dd><a href="">超链接</a></dd>
           </dl>
         </li>
@@ -113,7 +113,7 @@ function onclick1(){
 }
 //切换列表2页面
 function onclick2(){
-	document.getElementById("layui-body-id").innerHTML = '<p>123</p>';
+	document.getElementById("layui-body-id").innerHTML = "<iframe src='views/userlist.html' height=\'100%\' width=\'100%\'></iframe>";
 }
 </script>
 

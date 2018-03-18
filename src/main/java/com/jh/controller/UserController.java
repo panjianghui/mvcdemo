@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -54,5 +54,20 @@ public class UserController extends GenericController {
         List<User> users = userService.getUsers(userId);
         logger.info("===============================成功查询用户列表！");
         renderSuccessString(response, users);
+    }
+    // 查询用户列表
+    @RequestMapping(value = "/getuserlist", method = RequestMethod.GET)
+    @ResponseBody
+    public HashMap<Object, Object> getUserList(
+            @RequestParam(value = "page") Integer page,
+            @RequestParam(value = "limit") Integer limit,
+            @RequestParam(value = "id") String id,
+            HttpServletRequest request, HttpServletResponse response) {
+
+        HashMap<Object, Object> inMap = new HashMap<Object, Object>();
+        HashMap<Object, Object> outMap = userService.getUserList(inMap);
+        logger.info("===============================进入自定义用户列表");
+        logger.info(outMap.toString());
+        return outMap;
     }
 }
